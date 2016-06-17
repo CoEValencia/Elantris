@@ -1,0 +1,149 @@
+.btn:hover {
+    background-color: #C7C7C7 !important;
+}
+
+.btn-orange:hover {
+    background-color: #D07B32 !important;
+}
+
+.btn-green:hover {
+    background-color: #A1C9AC !important;
+}
+
+.btn,
+.btn.x-btn-focus.x-btn-default-small {
+    background-color: #E0E0E0;
+}
+
+.btn-orange,
+.btn-orange.x-btn-focus.x-btn-default-small {
+    background-color: #F5923E;
+}
+
+.btn-green,
+.btn-green.x-btn-focus.x-btn-default-small {
+    background-color: #AFDCBB;
+}
+
+.x-btn-focus.x-btn-default-small,
+.x-btn-focus.x-btn-over.x-btn-default-small {
+    box-shadow: none;
+}
+
+.btn-orange span,
+.display div {
+    color: #FFFFFF !important;
+}
+
+.display {
+    background-color: #69787F;
+    padding: 0px !important;
+}
+
+.btn span,
+.btn-orange span,
+.btn-green span {
+    font-size: 20px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.btn-orange,
+.btn,
+.display,
+.btn-green {
+    border-radius: 0;
+    border-color: #89898C;
+    border-width: 0.5px;
+}
+
+.display div {
+    font-size: 26px;
+    line-height: 32px;
+    text-align: right;
+    padding-right: 5px;
+    padding-top: 10px;
+}
+
+td div {
+    margin-bottom: 0px !important;
+}
+
+.x-window-header-default-top {
+    padding: 0px !important;
+    top: 0px !important;
+    left: 0px !important;
+}
+
+.x-treelist-item-text {
+    color: #adb3b8;
+    font-size: 14px;
+    line-height: 64px;   
+    text-align: center;     
+}
+
+.x-treelist-item-icon, .x-treelist-item-tool {
+    color: #adb3b8;    
+    font-size: 24px;
+    width: 36px;
+}
+
+.x-treelist-item-icon, .x-treelist-item-tool, .x-treelist-item-expander {
+    line-height: 64px;
+    text-align: center;
+}
+
+.x-treelist-item-expander {
+    color: #adb3b8;
+    font-size: 16px;
+    width: 18px;
+}
+
+.file-field-input {
+	width: 350px;	
+}
+
+.plano-panel {	
+	background: transparent;
+	background-position: bottom left;
+	background-repeat: no-repeat;
+	background-image: url("../img/prot/plano.png");
+}
+
+.plano-image {
+    border: 1px solid grey;
+}
+
+.round-button-circle {	
+    border-radius: 50%;
+	border:10px solid #5fa2dd;
+	width: 50px;
+	height: 50px;
+}
+
+.round-button-circle .x-btn-icon-el-default-toolbar-small{
+	color: #5fa2dd;
+}
+
+.round-button-circle.x-btn-over.x-btn-focus{
+	color: #0000ff;
+}
+
+.minimize {
+	padding: 6px 0 6px 8px;
+	border-style: solid;
+	border-color: #d0d0d0;
+	border-width: 1px;
+	background-image: none;
+	background-color: #32404E;
+}
+
+.minimizebutton, 
+.minimizebutton.x-btn-over,
+.minimizebutton.x-btn-pressed.x-btn-focus,
+.minimizebutton.x-btn-pressed,
+.minimizebutton.x-btn-focus,		
+.minimizebutton.x-btn-active {
+	background: transparent;
+	border-style: none;
+}
