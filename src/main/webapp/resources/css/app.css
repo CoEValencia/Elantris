@@ -147,3 +147,62 @@ td div {
 	background: transparent;
 	border-style: none;
 }
+
+.profile-icon {
+	border-radius: 50%;
+	border:1px solid #ccf3ff;
+	margin: 5px;
+	width: 50px;
+	height: 50px;	
+	box-shadow: 1px 2px 5px #888888;
+}
+
+.profile-cell{
+	width: 60px;
+}
+
+.stream-message-title {	
+	word-spacing: 1px;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 14px;
+	border-bottom: 1px solid #94b8b8;
+}
+
+.stream-message-timestamp {
+	color: #94b8b8;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 12px;
+}
+
+.stream-message-content {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	vertical-align: top;
+	color: #1e2f2f;
+}
+
+.stream-message {
+	width: 80%;	
+	border-radius: 10px;	
+	border: 1px solid #ccf3ff;
+	background-color: #e6f9ff;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+.stream-message-own {
+	width: 80%;	
+	margin-left: 20%;
+	border-radius: 10px;	
+	border: 1px solid #ccf3ff;
+	background-color: #e6f9ff;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+
+.stream-profile {
+	float: left;
+}
+
+.stream-body {
+	overflow: hidden;
+}

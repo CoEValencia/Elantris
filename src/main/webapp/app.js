@@ -6,9 +6,9 @@ Ext.application({
     }
 });
 
-Ext.define('Shelter', { 
+Ext.define('User', { 
     singleton: true, 
-
+    profilePic: 'img/scooby.png',
     logged: false,
-    user: null
+    user: 'Scooby Doo'    
 }); 

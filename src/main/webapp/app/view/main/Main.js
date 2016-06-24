@@ -9,7 +9,14 @@ Ext.define('ProjectElantris.view.main.Main', {
 	             'ProjectElantris.view.main.MainController',
 	             'ProjectElantris.view.main.MainModel',
 	             'ProjectElantris.view.stream.Stream',
-	             'ProjectElantris.view.stream.StreamController'
+	             'ProjectElantris.view.stream.StreamController',
+	             'ProjectElantris.view.stream.Message',
+	             'ProjectElantris.view.stream.MessageInputBox',
+	             'ProjectElantris.view.stream.MessageInputBoxController',
+	             'ProjectElantris.view.stream.Conversation',
+	             'ProjectElantris.view.stream.ConversationController',
+	             'ProjectElantris.store.stream.MessageStore',
+	             'ProjectElantris.model.stream.MessageModel'
     ],
 	
     title: 'Elantris',
@@ -125,7 +132,7 @@ Ext.define('ProjectElantris.view.main.Main', {
         items: [
             {
             	//html: 'Conversacion 1'
-            	xtype: 'conversation'
+            	xtype: 'stream'
 			},
 			{
 				html:'Conversacion 2'

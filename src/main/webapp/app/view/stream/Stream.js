@@ -1,6 +1,6 @@
 Ext.define('ProjectElantris.view.stream.Stream', {
 	extend: 'Ext.panel.Panel',
-	xtype: 'conversation',
+	xtype: 'stream',
 	
 	scrollable: false,
 	
@@ -10,20 +10,11 @@ Ext.define('ProjectElantris.view.stream.Stream', {
 	padding: 10,
 	
 	items: [{
-		
+		xtype: 'conversation'		
 	}],
 	
 	dockedItems: [{
-        xtype: 'toolbar',
-        dock: 'bottom',        
-        
-        items: [{
-        	xtype: 'textarea',
-        	emptyText: 'Escribe mensaje',
-        	flex: 1
-        },{
-        	iconCls: 'x-fa fa-paper-plane',
-        	cls: 'round-button-circle',        	
-        }]
+        xtype: 'messagebox',
+        dock: 'bottom'
     }]
 });
