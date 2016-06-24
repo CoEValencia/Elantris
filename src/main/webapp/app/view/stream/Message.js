@@ -7,9 +7,9 @@ Ext.define('ProjectElantris.view.stream.Message', {
 	tpl: [
 		'<tpl for=".">',
 			'<tpl if="userName != User.user">',
-			'<div id="{id}-message" class="stream-message">',
+			'<div id="{messageId}-message" class="stream-message">',
 			'<tpl else>',
-			'<div id="{id}-message" class="stream-message-own">',
+			'<div id="{messageId}-message" class="stream-message-own">',
 			'</tpl>',
 				'<div class="stream-profile"><img src="{imageSrc}" alt="profile image" style="vertical-align:text-top" class="profile-icon"/></div>',
 				'<div class="stream-body">',

@@ -3,7 +3,7 @@ Ext.define('ProjectElantris.model.stream.MessageModel', {
 	alias: 'model.message',	
 	
 	fields: [
-	         {name: 'id', type: 'int'},
+	         {name: 'messageId', type: 'int'},
 	         {name: 'imageSrc', type: 'string'},
 	         {name: 'userName', type: 'string'},
 	         {name: 'timestamp', type: 'date', dateFormat: 'd-m-Y H:i'},

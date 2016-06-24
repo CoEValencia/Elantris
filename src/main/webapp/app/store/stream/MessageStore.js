@@ -2,7 +2,7 @@ Ext.define('ProjectElantris.store.stream.MessageStore', {
 	extend: 'Ext.data.Store',
 	alias: 'store.message',
 	model: 'ProjectElantris.model.stream.MessageModel',
-	autoSync: true,
+
 	proxy: {
         type: 'ajax',
         actionMethods: {

@@ -4,7 +4,7 @@ Ext.define('ProjectElantris.view.stream.MessageInputBoxController', {
     
     control: {
         'messagebox > textarea#messageArea': {
-        	keypress: 'checkKey',
+        	keyup: 'checkKey',
         	specialkey: 'checkSpecialKey'
         }
     },
@@ -14,14 +14,13 @@ Ext.define('ProjectElantris.view.stream.MessageInputBoxController', {
         // e.TAB, e.ESC, arrow keys: e.LEFT, e.RIGHT, e.UP, e.DOWN
         if (!e.shiftKey && e.getKey() == e.ENTER) {
         	var content = field.getValue();
-        	var jsonString = {id: 3, imageSrc: User.profilePic, userName: User.user, timestamp: new Date(), messageText: field.getValue()};
+        	var jsonString = [{messageId: 3, imageSrc: User.profilePic, userName: User.user, timestamp: new Date(), messageText: field.getValue()}];
         	
-        	var jsonOb = Ext.util.JSON.encode(jsonString);
-        	var store = Ext.ComponentQuery.query('message[name=converation1]')[0].getStore();
-        	store.add(Ext.create('ProjectElantris.model.stream.MessageModel', jsonOb));
-        	
-        	field.reset();
-        	var stop;
+        	var dataView = Ext.ComponentQuery.query('message[name=converation1]')[0];
+        	var store = dataView.getStore();
+        	store.add(jsonString);
+        	dataView.refresh();
+        	field.reset();        	
         }
     	
 	},

@@ -3,7 +3,7 @@ package com.example.dto;
 import java.util.Date;
 
 public class MessageDto {
-	private Long id;
+	private Long messageId;
 	private String userName;
 	private String imageSrc;
 	private Date timestamp;
@@ -11,20 +11,20 @@ public class MessageDto {
 	
 	public MessageDto(){}
 	
-	public MessageDto(Long id, String userName, String imageSrc, Date timestamp, String messageText){
-		this.id = id;
+	public MessageDto(Long messageId, String userName, String imageSrc, Date timestamp, String messageText){
+		this.messageId = messageId;
 		this.userName = userName;
 		this.imageSrc = imageSrc;
 		this.timestamp = timestamp;
 		this.messageText = messageText;
 	}
 	
-	public Long getId() {
-		return id;
+	public Long getMessageId() {
+		return messageId;
 	}
 	
-	public void setId(Long id) {
-		this.id = id;
+	public void setMessageId(Long messageId) {
+		this.messageId = messageId;
 	}
 	
 	public String getUserName() {
