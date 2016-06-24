@@ -6,6 +6,10 @@ Ext.define('ProjectElantris.view.stream.MessageInputBoxController', {
         'messagebox > textarea#messageArea': {
         	keyup: 'checkKey',
         	specialkey: 'checkSpecialKey'
+        },
+        
+        'messagebox > button#confirmButton': {
+        	click: 'sendMessage'
         }
     },
     
@@ -29,5 +33,38 @@ Ext.define('ProjectElantris.view.stream.MessageInputBoxController', {
         if ((ev.shiftKey || ev.ctrlKey) && ev.getKey() === ev.ENTER ) {
             //field.setValue(field.getValue() + '\n');
         }
-    }
+    },
+	
+	sendMessage: function() {
+		var message = Ext.ComponentQuery.query('textarea[itemId=messageArea]')[0].getValue();
+		
+		var params = {messageId: null, imageSrc: User.profilePic, userName: User.user, timestamp: "24-06-2016 16:53", messageText: message};
+		
+		
+		Ext.Ajax.request({
+			url: '/addnewmessage',
+			method: 'POST',
+			jsonData: params,
+			success: function(response, opts){
+				
+			},
+			failure: function(response, opts){
+				Ext.Msg.alert('Failure', 'No se ha podido enviar el mensaje');
+			}
+    	});
+		
+		
+		Ext.Ajax.request({
+			url: '/addnewmessage',
+			method: 'POST',
+			success: function(response, opts){    								
+				Ext.Msg.alert('Success', 'El alta realizado con éxito');
+				
+			},
+			failure: function(response, opts){
+				
+			},
+			jsonData: params
+		});
+	}
 });

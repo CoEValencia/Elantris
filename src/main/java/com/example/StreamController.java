@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.dto.MessageDto;
+import com.example.response.GenericResponse;
 import com.example.response.NewMessagesResponse;
 
 @RestController
@@ -29,6 +30,19 @@ public class StreamController {
 		
 		NewMessagesResponse response = new NewMessagesResponse(exists, mensajes);				
 		
+		return response;
+	}
+	
+	@RequestMapping(value = "/addnewmessage", method = RequestMethod.POST)
+	@Transactional(readOnly = false)
+	public GenericResponse addMessageToStream(@RequestBody MessageDto dto){
+		System.out.println("\n\n\n");
+		System.out.println("UserName:\t" + dto.getUserName());
+		System.out.println("Timestamp:\t" + dto.getTimestamp());
+		System.out.println("Message:\t" + dto.getMessageText());
+		System.out.println("\n\n\n");
+		
+		GenericResponse response = new GenericResponse();
 		return response;
 	}
 	
