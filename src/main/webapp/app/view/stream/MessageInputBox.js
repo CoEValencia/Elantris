@@ -1,6 +1,7 @@
 Ext.define('ProjectElantris.view.stream.MessageInputBox', {
 	extend: 'Ext.toolbar.Toolbar',
 	xtype: 'messagebox',        
+    cls: 'stream-message-box',
     
 	controller: 'messagebox',
 	

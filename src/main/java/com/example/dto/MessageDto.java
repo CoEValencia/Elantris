@@ -15,6 +15,7 @@ public class MessageDto {
 	private Date timestamp;
 	private String messageText;
 	
+	
 	public MessageDto(){}
 	
 	public MessageDto(Long messageId, String userName, String imageSrc, Date timestamp, String messageText){
@@ -65,5 +66,4 @@ public class MessageDto {
 	public void setMessageText(String messageText) {
 		this.messageText = messageText;
 	}	
-	
 }

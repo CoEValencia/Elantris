@@ -8,13 +8,30 @@ Ext.define('ProjectElantris.view.stream.Stream', {
 	
 	controller: 'main',
 	padding: 10,
+	layout: {
+		type: 'vbox',
+		align: 'stretch'
+	},
 	
 	items: [{
-		xtype: 'conversation'		
+		xtype: 'conversation',
+		reference: 'conv1'
 	}],
 	
 	dockedItems: [{
         xtype: 'messagebox',
         dock: 'bottom'
-    }]
+    }],
+    
+    setTitle: function(title){
+    	this.title = title;
+//    	this.items.items[0].setName(title+'_conv');
+    },
+    
+    listeners: {
+    	afterrender:  function(){
+	    	var item = Ext.ComponentQuery.query('conversation[reference=conv1]')[0];
+	    	item.startCheck();
+    	}
+    }
 });

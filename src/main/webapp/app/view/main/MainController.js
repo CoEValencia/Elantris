@@ -1,12 +1,6 @@
 Ext.define('ProjectElantris.view.main.MainController', {    
     extend: 'Ext.app.ViewController',
     alias: 'controller.main',
-
-	onToggleConfig: function (menuitem) {
-	    var treelist = this.lookupReference('treelist');
-	
-	    treelist.setConfig(menuitem.config, menuitem.checked);
-	},
 	
 	onSelectionChange: function(tree, node, opts) {
 		var panel = this.lookupReference('contentPanel');
@@ -44,24 +38,6 @@ Ext.define('ProjectElantris.view.main.MainController', {
 	            }
 	        }
 	    });
-	},
-	
-	onToggleMicro: function (button, pressed) {
-	    var treelist = this.lookupReference('treelist'),
-	        ct = treelist.ownerCt;
-	
-	    treelist.setMicro(pressed);
-	
-	    if (pressed) {
-	        this.oldWidth = ct.width;
-	        ct.setWidth(44);
-	    } else {
-	        ct.setWidth(this.oldWidth);
-	    }
-		     
-	    if (Ext.isIE8) {
-	        this.repaintList(treelist, pressed);
-	    }
 	}
 
 });

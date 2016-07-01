@@ -10,5 +10,6 @@ Ext.define('User', {
     singleton: true, 
     profilePic: 'img/scooby.png',
     logged: false,
-    user: 'Scooby Doo'    
+    user: 'Scooby Doo',
+    openConversations: {}
 }); 

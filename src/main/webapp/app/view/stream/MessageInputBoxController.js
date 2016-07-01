@@ -23,8 +23,10 @@ Ext.define('ProjectElantris.view.stream.MessageInputBoxController', {
         	var dataView = Ext.ComponentQuery.query('message[name=converation1]')[0];
         	var store = dataView.getStore();
         	store.add(jsonString);
+        	dataView.up().scrollBy(0, 999999, true);
         	dataView.refresh();
-        	field.reset();        	
+        	field.reset();    
+        	this.sendMessage(content);
         }
     	
 	},
@@ -35,8 +37,8 @@ Ext.define('ProjectElantris.view.stream.MessageInputBoxController', {
         }
     },
 	
-	sendMessage: function() {
-		var message = Ext.ComponentQuery.query('textarea[itemId=messageArea]')[0].getValue();
+	sendMessage: function(message) {
+//		var message = Ext.ComponentQuery.query('textarea[itemId=messageArea]')[0].getValue();
 		
 		var params = {messageId: null, imageSrc: User.profilePic, userName: User.user, timestamp: "24-06-2016 16:53", messageText: message};
 		
@@ -54,17 +56,17 @@ Ext.define('ProjectElantris.view.stream.MessageInputBoxController', {
     	});
 		
 		
-		Ext.Ajax.request({
-			url: '/addnewmessage',
-			method: 'POST',
-			success: function(response, opts){    								
-				Ext.Msg.alert('Success', 'El alta realizado con éxito');
-				
-			},
-			failure: function(response, opts){
-				
-			},
-			jsonData: params
-		});
+//		Ext.Ajax.request({
+//			url: '/addnewmessage',
+//			method: 'POST',
+//			success: function(response, opts){    								
+//				Ext.Msg.alert('Success', 'El alta realizado con éxito');
+//				
+//			},
+//			failure: function(response, opts){
+//				
+//			},
+//			jsonData: params
+//		});
 	}
 });
