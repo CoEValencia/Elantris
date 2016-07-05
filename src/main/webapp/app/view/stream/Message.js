@@ -16,7 +16,7 @@ Ext.define('ProjectElantris.view.stream.Message', {
 						'<b>{userName}&nbsp;</b><span class="stream-message-timestamp">{timestamp:date("d-m-Y H:i")}</span>',
 					'</div>',
 					'<div class="stream-message-content">',
-						'<p><span>{messageText}</span></p>',
+						'<p><span>{[Ext.util.Format.nl2br(values.messageText)]}</span></p>',
 					'</div>',
 				'</div>',
 			'</div></br>',

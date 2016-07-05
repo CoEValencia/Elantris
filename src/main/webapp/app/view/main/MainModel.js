@@ -27,32 +27,22 @@ Ext.define('ProjectElantris.view.main.MainModel', {
         	    reader: {
         	    	type: 'json',
     	    	}
-        	}
-
-//            root: {
-//                expanded: true,                   
-//                style: 'color:red',
-//                children: [{
-//                	text: 'Categoria 1',
-//                	iconCls: 'x-fa fa-comments-o',            		
-//            		children: [{            			
-//            			text: 'Conversacion 1',
-//            			iconCls: 'x-fa fa-comment-o',
-//            			leaf: true
-//            		}]
-//                },{
-//                	text: 'Categoria 2',
-//            		iconCls: 'x-fa fa-comments-o', 
-//            		children: [{
-//            			text: 'Conversacion 2',
-//            			iconCls: 'x-fa fa-comment-o', 
-//            			leaf: true
-//            		}]
-//                }]
-//            }
-        	
-        	
-        	
+        	},
+            listeners: {
+            	load: function(store, records, successful, eOpts){    
+               		var treePanel = Ext.ComponentQuery.query('treelist[name=conversationtree]')[0]; 
+               		var contentPanel = Ext.ComponentQuery.query('panel[name=contentPanel]')[0];
+               		for(var i=0; i < records.length; i++){
+               		    var record = records[i];
+               		    var cat = record.data.children;
+               		    for(var j=0; j < cat.length; j++){
+               		        console.log(cat[j].conversationId + ' - ' + cat[j].text);
+               		        var conv = Ext.create('ProjectElantris.view.stream.Stream', { itemId: 'Conv'+cat[j].conversationId, title: cat[j].text});
+               		        contentPanel.add(conv);
+               		    }
+               		}               		
+               	}
+            }        	
         }
     }
 });

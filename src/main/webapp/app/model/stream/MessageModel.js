@@ -7,7 +7,8 @@ Ext.define('ProjectElantris.model.stream.MessageModel', {
 	         {name: 'imageSrc', type: 'string'},
 	         {name: 'userName', type: 'string'},
 	         {name: 'timestamp', type: 'date', dateFormat: 'd-m-Y H:i'},
-	         {name: 'messageText', type: 'string'}
+	         {name: 'messageText', type: 'string'},
+	         {name: 'conversationId', type: 'int'}
     ]
 	
 });		

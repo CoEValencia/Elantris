@@ -7,14 +7,15 @@ Ext.define('ProjectElantris.view.stream.MessageInputBox', {
 	
     items: [{
     	xtype: 'textarea',
-    	itemId: 'messageArea', 
+    	itemId: 'messageArea',
+    	reference: 'messageArea',
     	enableKeyEvents: true,
     	emptyText: 'Escribe mensaje',
     	flex: 1
     },{
     	iconCls: 'x-fa fa-paper-plane',
     	itemId: 'confirmButton',
-    	cls: 'round-button-circle',        	
+    	cls: 'round-button-circle'
     }]
 	
 	

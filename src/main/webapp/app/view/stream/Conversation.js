@@ -3,16 +3,17 @@ Ext.define('ProjectElantris.view.stream.Conversation', {
 	xtype: 'conversation',
 	
 	controller: 'conversation',
-	name: 'nombre1',	
 	layout: 'fit',
 	scrollable: 'y',
 	flex: 1,
 	
-	items: [{
-		xtype: 'message',		
-		name: 'converation1',		
-		store: Ext.create('ProjectElantris.store.stream.MessageStore')
-	}],
+	items: [
+//	        {
+//		xtype: 'message',		
+//		reference: 'myMessage',		
+//		store: Ext.create('ProjectElantris.store.stream.MessageStore',{name:'storemessages_' + this.itemId, id: 'store-' + this.itemId })
+//	}
+	],
 	
 	addMessage: function(message){
 		var store = this.items.items[0].getStore();		
@@ -26,13 +27,16 @@ Ext.define('ProjectElantris.view.stream.Conversation', {
 	},
 	
 	startCheck: function(){
-		var task;		
+				
 		var me = this;
-		task = {
-		    run: function() {
+		this.task = Ext.TaskManager.start({
+		    run: function() {		
+		    	var catId = me.getItemId().replace("-conversation", "").replace("Conv", "");
+		    	var params = {user: User.user, idConversation: catId};
 		    	Ext.Ajax.request({
 					url: '/getnewmessages',
-					method: 'POST',					
+					method: 'POST',
+					jsonData: params,
 					success: function(response, opts){						
 						var store = me.items.items[0].getStore();
 						var messages = Ext.decode(response.responseText).mensajes;
@@ -43,8 +47,7 @@ Ext.define('ProjectElantris.view.stream.Conversation', {
 								me.items.items[0].refresh();			
 							}
 						}						
-//						Ext.TaskManager.stopAll();
-//						var stop;
+//						Ext.TaskManager.stop(me.task);
 					},
 					failure: function(response, opts){
 						Ext.Msg.alert('Failure', 'No se ha comprobar nuevos mensajes');
@@ -52,10 +55,9 @@ Ext.define('ProjectElantris.view.stream.Conversation', {
 		    	});
 		    			    			    	
 		    },
-		    interval: 5000
-		};
-		
-		Ext.TaskManager.start(task);
+		    interval: 1000,
+		    scope: this
+		});		
 		
 	}
 	

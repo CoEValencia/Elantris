@@ -14,6 +14,6 @@ Ext.define('ProjectElantris.store.stream.MessageStore', {
             rootProperty: 'mensajes'
         }
     },
-    autoLoad: true
+    autoLoad: false
 	
 });		

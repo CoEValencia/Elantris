@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class MessageDto {
 	private Long messageId;
+	private Long conversationId;
 	private String userName;
 	private String imageSrc;
 	@JsonFormat(pattern="dd-MM-yyyy HH:mm")
@@ -18,12 +19,13 @@ public class MessageDto {
 	
 	public MessageDto(){}
 	
-	public MessageDto(Long messageId, String userName, String imageSrc, Date timestamp, String messageText){
+	public MessageDto(Long messageId, String userName, String imageSrc, Date timestamp, String messageText, Long conversationId){
 		this.messageId = messageId;
 		this.userName = userName;
 		this.imageSrc = imageSrc;
 		this.timestamp = timestamp;
 		this.messageText = messageText;
+		this.conversationId = conversationId;
 	}
 	
 	public Long getMessageId() {
@@ -65,5 +67,15 @@ public class MessageDto {
 	
 	public void setMessageText(String messageText) {
 		this.messageText = messageText;
-	}	
+	}
+
+	public Long getConversationId() {
+		return conversationId;
+	}
+
+	public void setConversationId(Long conversationId) {
+		this.conversationId = conversationId;
+	}
+	
+	
 }
