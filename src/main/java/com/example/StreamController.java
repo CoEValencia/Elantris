@@ -37,6 +37,7 @@ public class StreamController {
 		mensajes.add(new MessageDto(1L, "Darth Vader", "img/darth.JPG", new Date(), "Aca probando con algun mensajito, viste?", dto.getIdConversation()));
 		mensajes.add(new MessageDto(2L, "Scooby Doo", "img/scooby.png", new Date(), "Pero vos sos loco, vi'te? Como va' a decir eso, vi'te?", dto.getIdConversation()));
 		mensajes.add(new MessageDto(3L, "Batman", "img/batman.jpg", new Date(), "I'm... BATMAN", dto.getIdConversation()));
+		mensajes.add(new MessageDto(4L, "Lola", "img/lola.jpg", new Date(), "No vuelvas a decirme muñeca...", dto.getIdConversation()));
 		
 		NewMessagesResponse response = new NewMessagesResponse(exists, mensajes);				
 		

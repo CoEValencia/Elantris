@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.dto.UserInfoDto;
 import com.example.dto.UserLoginDto;
+import com.example.dto.UserSessionDto;
 import com.example.response.LoginResponse;
 
 @RestController
@@ -36,10 +38,32 @@ public class RegistroController {
 		return response;
 	}
 	
-	@RequestMapping(value = "/getsession", method = RequestMethod.POST)
+	@RequestMapping(value = "/getsession")//, method = RequestMethod.POST)
 	@Transactional(readOnly = false)
-	@ResponseBody
-	public String enterElantris(@RequestParam("session") String session){
-		return "user";
-	}
+	@ResponseBody //@RequestParam("session") 
+	public UserInfoDto enterElantris(String session){
+		String profilePic = ""; 
+		String user = ""; 
+		switch(session){
+			case "nerea":
+				user = "Lola";
+				profilePic = "img/lola.jpg";
+				break;
+			case "juan":
+				user = "Darth Vader";
+				profilePic = "img/darth.JPG";
+				break;
+			case "pablo":
+				user = "Batman";
+				profilePic = "img/batman.jpg";
+				break;
+			case "nico":
+				user = "Scooby Doo";
+				profilePic = "img/scooby.png";
+				break;
+		}
+								
+		UserInfoDto response = new UserInfoDto(user, profilePic);
+		return response;
+	}	
 }
