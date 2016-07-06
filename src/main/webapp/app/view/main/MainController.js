@@ -6,6 +6,10 @@ Ext.define('ProjectElantris.view.main.MainController', {
     	var stop;
     },
     
+    closeSession: function(){
+    	window.location.replace(window.location.origin);
+    },
+    
 	onSelectionChange: function(tree, node, opts) {
 		var panel = this.lookupReference('contentPanel');
 		var opcion = node.getData().text;

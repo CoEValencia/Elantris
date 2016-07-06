@@ -61,7 +61,7 @@ Ext.define('ProjectElantris.view.main.Main', {
 	        	}
 	        },{
 	            xtype: 'button',
-	            text: 'User',
+	            text: User.user,
 	            cls: 'elantris-user-btn',
 	            iconCls: 'x-fa fa-user',
 	            menu: [{            	
@@ -70,7 +70,8 @@ Ext.define('ProjectElantris.view.main.Main', {
 	                	
 	            }, {
 	                text: 'Cerrar sesión',
-	                iconCls: 'x-fa fa-sign-out'
+	                iconCls: 'x-fa fa-sign-out',
+	                handler: 'closeSession'
 	            }]
 	        }]
     	}]
